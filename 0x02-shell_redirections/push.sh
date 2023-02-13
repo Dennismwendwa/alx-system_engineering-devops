@@ -8,5 +8,5 @@ git status
 git add .
 git status
 git commit -m commitMessage
-git push origin main
+git push origin master
 
