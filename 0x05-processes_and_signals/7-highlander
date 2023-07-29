@@ -3,7 +3,7 @@
 
 function sigterm_handler()
 {
-	echo "I am invincible"
+	echo "I am invincible!!!"
 }
 
 trap 'sigterm_handler' SIGTERM
