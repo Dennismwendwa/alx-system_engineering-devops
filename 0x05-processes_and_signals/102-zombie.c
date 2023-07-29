@@ -1,6 +1,6 @@
 #include <sys/wait.h>
 #include <sys/types.h>
-#include <sys/stdio.h>
+#include <stdio.h>
 #include <unistd.h>
 
 /**
