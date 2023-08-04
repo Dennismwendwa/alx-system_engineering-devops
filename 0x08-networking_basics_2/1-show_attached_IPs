@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script shows all IPv4 IPs address
+
+ip addr | grep -oE "inet (addr:)?([0-9]*\.){3}[0-9]*" | grep -oE "([0-9]*\.){3}[0-9]*"
