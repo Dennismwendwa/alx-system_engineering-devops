@@ -1,3 +1,0 @@
-Host 54.173.2.214
-	IdentityFile ~/.shh/school
-	PasswordAuthentication no
