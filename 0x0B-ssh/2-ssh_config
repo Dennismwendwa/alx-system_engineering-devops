@@ -1,3 +1,3 @@
 Host 54.173.2.214
-	IdentityFile ~/.shh/school
+	IdentityFile ~/.ssh/school
 	PasswordAuthentication no
