@@ -2,7 +2,7 @@
 # connecting to server
 
 private_key=~/.shh/school
-server_ip=8.8.8.8
+server_ip=54.173.2.214
 user=ubuntu
 
 ssh -i "$private_key" "$user"@"$server_ip"
