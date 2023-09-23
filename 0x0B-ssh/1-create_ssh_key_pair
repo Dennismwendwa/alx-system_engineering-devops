@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
-# generating ssh key
 
-ssh-keygen -f school -b 4096 -N betty
+key_name="school"
+key_bits=4096
+passphrase="betty"
+
+ssh-keygen -b "$key_bits" -f "$key_name" -N "$passphrase"
