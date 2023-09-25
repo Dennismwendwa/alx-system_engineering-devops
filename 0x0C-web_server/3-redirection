@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# script that redirects to youtube
+
+
+sudo apt-get update
+sudo apt-get install -y nginx
+sudo chown -R ubuntu /var/www
+echo "Hello World!" > /var/www/html/index.html
+
+sudo sed -i "/^\sserver_name.*/a \    rewrite ^redirect_me(/*) https://www.youtube.com/watch?v=QH2-TGUlwu4;" /etc/nginx/sites-available/default
+
+nginx -t
+service nginx reload
