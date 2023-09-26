@@ -10,20 +10,14 @@ file { '/var/www/html/index.html':
   content => 'Hello World',
 }
 
-file { 'etc/nginx/sites-available/default':
-  ensure => 'file',
-  source => 'puppet:///modules/web_server/nginx_default_config',
+file_line { 'redirection-301':
+  ensure => 'present',
+  path   => '/etc/nginx/sites-available/default',
+  after  => 'listen 80 default_server;',
+  line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;'
 }
 
 service { 'ngixx':
   ensure    => 'running';
-  enable    => true,
-  require   => [Package['nginx'], File['/etc/nginx/sites-available/default']],
-  subscribe => File['/etc/nginx/sites-available/default'],
-}
-
-nginx::resource::location { 'redirect_me':
-  ensure   => 'present',
-  location => '~ ^/redirect_me$',
-  rewrite  => '^/redirect_me / permanent',
+  require   => Package[ 'nginx' ]
 }
