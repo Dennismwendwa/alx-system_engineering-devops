@@ -1,0 +1,9 @@
+# script that downloads and build docker image
+
+FROM httpd:2.4
+
+RUN echo "Hello Holberton" /usr/local/apache2/htdocs/index.html
+
+docker build -t my-apache-image .
+
+docker run -p 8080:80 -d my-apache-image
