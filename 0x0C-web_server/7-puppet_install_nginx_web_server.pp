@@ -6,7 +6,6 @@ package { 'nginx':
 }
 
 file { '/var/www/html/index.html':
-  ensure  => file,
   content => 'Hello World',
 }
 
@@ -17,7 +16,7 @@ file_line { 'redirection-301':
   line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;'
 }
 
-service { 'ngixx':
-  ensure    => 'running';
+service { 'nginx':
+  ensure    => running'
   require   => Package[ 'nginx' ]
 }
