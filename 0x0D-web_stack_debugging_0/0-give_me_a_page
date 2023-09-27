@@ -2,12 +2,12 @@
 # script that downloads and build docker image
 
 # creating Dockerfile with image instruction
-cat <<EOF > Dockerfile
-FROM httpd:2.4
-RUN echo "Hello Holberton" > /usr/local/apache2/htdocs/index.html
-EOF
+# cat <<EOF > Dockerfile
+# FROM httpd:2.4
+# RUN echo "Hello Holberton" > /usr/local/apache2/htdocs/index.html
+# EOF
 
-docker build -t my-apache-image . > /dev/null 2>&1
+# docker build -t my-apache-image . > /dev/null 2>&1
 
-#docker run -p 8080:80 -d my-apache-image > /dev/null 2>&1
+# docker run -p 8080:80 -d my-apache-image > /dev/null 2>&1
 sudo service apache2 start
