@@ -9,6 +9,5 @@ EOF
 
 docker build -t my-apache-image . > /dev/null 2>&1
 
-docker run -p 8080:80 -d my-apache-image > /dev/null 2>&1
-
-curl 0:8080
+#docker run -p 8080:80 -d my-apache-image > /dev/null 2>&1
+sudo service apache2 start
