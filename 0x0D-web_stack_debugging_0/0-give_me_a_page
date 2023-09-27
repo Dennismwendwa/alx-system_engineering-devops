@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 # script that downloads and build docker image
 
+# creating Dockerfile with image instruction
+cat <<EOF > Dockerfile
 FROM httpd:2.4
-
-RUN echo "Hello Holberton" /usr/local/apache2/htdocs/index.html
+RUN echo "Hello Holberton" > /usr/local/apache2/htdocs/index.html
+EOF
 
 docker build -t my-apache-image .
 
