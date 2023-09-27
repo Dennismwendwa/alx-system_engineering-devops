@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # script that downloads and build docker image
 
 FROM httpd:2.4
