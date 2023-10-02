@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# this script installs and conf Haproxy
+
+sudo service haproxy stop
+sudo apt-get purge -y haproxy
+
+sudo apt update
+sudo apt install -y haproxy
+
+cat <<EOL | sudo tee /etc/haproxy/haproxy.cfg
+global
+	log /dev/log local0
+	log /dev/log local1 notice
+	user haproxy
+	group haproxy
+	maxconn 2000
+	daemon
+
+defaults
+	log global
+	mode http
+	option httplog
+	option dontlognull
+	retries 3
+	timeout http-request 10s
+	timeout queue 1m
+	timeout connect 10s
+	timeout client 1m
+	timeout server 1m
+	timeout check 10s
+
+frontend http-in
+	bind *:80
+	default_backend servers
+
+backend servers
+	balance roundrobin
+	server web-01 259414-web-01:80 check
+	server web-02 259414-web-02:80 check
+EOL
+
+sudo service haproxy restart
+sudo service haproxy enable
