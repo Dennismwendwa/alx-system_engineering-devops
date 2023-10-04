@@ -7,6 +7,8 @@ sudo apt-get purge -y haproxy
 sudo apt update
 sudo apt install -y haproxy
 
+sudo sed -i '$aENABLED=1' /etc/default/haproxy
+
 cat <<EOL | sudo tee /etc/haproxy/haproxy.cfg
 global
 	log /dev/log local0
@@ -29,14 +31,15 @@ defaults
 	timeout server 1m
 	timeout check 10s
 
-frontend http-in
+frontend http_front
 	bind *:80
-	default_backend servers
+	stats uri /haproxy?stats
+	default_backend http_back
 
-backend servers
+backend http_back
 	balance roundrobin
-	server web-01 259414-web-01:80 check
-	server web-02 259414-web-02:80 check
+	server 259414-web-01 54.173.2.214:80 check
+	server 259414-web-02 100.24.242.66:80 check
 EOL
 
 sudo service haproxy restart
