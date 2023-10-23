@@ -26,14 +26,14 @@ def get_employee_progress(employee_id):
             ]
             total_tasks = len(todo_data)
 
-            results = (
-                f"Employee {employee_name} is done with tasks "
-                f"({len(done_tasks)}/{total_tasks}):"
-            )
-            print(results)
+            print("Employee {} is done with tasks({}/{}):".format(
+                employee_name,
+                len(done_tasks),
+                total_tasks
+                ))
 
             for task_title in done_tasks:
-                print(f"\t{task_title}")
+                print("\t {}".format(task_title))
         else:
             print("Request failed")
     except requests.exceptions.RequestException as e:
