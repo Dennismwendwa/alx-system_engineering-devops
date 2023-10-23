@@ -32,9 +32,6 @@ def get_employee_progress(employee_id):
 
             with open(csv_filename, mode="w", newline="") as csv_file:
                 csv_writer = csv.writer(csv_file)
-                # csv_writer.writerow(
-                # ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS",
-                # "TASK_TITLE"])
 
                 for task in todo_data:
                     task_completed = task["completed"]
