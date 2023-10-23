@@ -37,7 +37,7 @@ def get_employee_progress(employee_id):
         else:
             print("Request failed")
     except requests.exceptions.RequestException as e:
-        print(f"Request failed: {e}")
+        pass
 
 
 if __name__ == "__main__":
