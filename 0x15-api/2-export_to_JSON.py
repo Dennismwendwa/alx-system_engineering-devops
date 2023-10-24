@@ -33,7 +33,7 @@ def get_employee_progress(employee_id):
             for task in todo_data:
                 task_data = {
                     "task": task["title"],
-                    "completde": task["completed"],
+                    "completed": task["completed"],
                     "username": employee_username
                 }
                 tasks.append(task_data)
