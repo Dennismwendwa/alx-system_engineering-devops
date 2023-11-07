@@ -2,16 +2,19 @@
 """This script uses recursition to paginate api responses"""
 import requests
 
+
 def recurse(subreddit, hot_list=[], after=None):
     if hot_list is None:
         hot_list = []
 
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10&after={after}"
+    url = (
+           f"https://www.reddit.com/r/{subreddit}/hot.json?"
+           f"limit=10&after={after}"
+           )
 
     headers = {"User-Agent": "MyBot"}
 
     response = requests.get(url, headers=headers, allow_redirects=False)
-    print(response.status_code)
     if response.status_code == 200:
         data = response.json()
 

@@ -14,5 +14,4 @@ def number_of_subscribers(subreddit):
         sunscribers = data["data"]["subscribers"]
         return sunscribers
     else:
-        
         return 0
