@@ -10,7 +10,7 @@ import requests
 def top_ten(subreddit):
     """
     This function send get request to reddit api
-    """    
+    """
     url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
     headers = {"User-Agent": "MyBot"}
     response = requests.get(url, headers=headers, allow_redirects=False)
