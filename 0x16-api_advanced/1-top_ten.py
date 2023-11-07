@@ -2,7 +2,6 @@
 """
 This script sends get request to reddit api and counts the titles return
 """
-
 import requests
 
 
