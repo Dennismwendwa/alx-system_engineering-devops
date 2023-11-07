@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This script sends request to reddit api"""
+"""This script sends get request to reddit api and counts the titles return"""
 import requests
 
 
