@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This script sends get request to reddit api and counts the titles return
+This script sends get request to reddit api and
+counts the titles return
 """
 
 import requests
