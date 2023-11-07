@@ -4,6 +4,7 @@ import requests
 
 
 def recurse(subreddit, hot_list=[], after=None):
+    """This function sends get request"""
     if hot_list is None:
         hot_list = []
 
