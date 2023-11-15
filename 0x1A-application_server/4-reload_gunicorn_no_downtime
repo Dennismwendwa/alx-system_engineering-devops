@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Always available no down time
+
+pgrep gunicorn | xargs kill -HUP
